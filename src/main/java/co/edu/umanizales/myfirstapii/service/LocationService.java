@@ -20,6 +20,7 @@ import java.util.List;
 @Getter
 public class LocationService {
 
+    public Object getLocationByCode;
     private List<Location> locations;
 
     @Value( "${locations_filename}" )
