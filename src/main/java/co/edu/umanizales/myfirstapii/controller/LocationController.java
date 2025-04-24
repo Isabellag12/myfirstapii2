@@ -3,10 +3,7 @@ package co.edu.umanizales.myfirstapii.controller;
 import co.edu.umanizales.myfirstapii.model.Location;
 import co.edu.umanizales.myfirstapii.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -47,5 +44,11 @@ public class LocationController {
 
     @GetMapping(path = "/initialLetter/{initialLetter}")
     public List<Location> getLocationByInitialLetter (@PathVariable String initialLetter){ return locationService.getLocationByInitialLetter(initialLetter);}
+
+    @GetMapping("/byMinLength/{minLength}")
+    public List<Location> getLocationsByMinLength(@PathVariable int minLength) {
+        return locationService.getLocationsByMinNameLength(minLength);
+    }
+
 
 }

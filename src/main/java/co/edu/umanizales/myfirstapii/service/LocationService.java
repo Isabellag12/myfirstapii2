@@ -85,6 +85,24 @@ public class LocationService {
                 initialLetterArray.add(location);
             }
         }
+        //esta parte del codigo hace que yo le de un numero, un caracter y me arroja las ciudades
+        //y departamentos que tengan mas de los caracteres pedidos
+        //el rest es donde los métodos devolverán datos directamente en la respuesta
+//Inyección de dependencia del servicio LocationService
+//get all locations es el controlador
+//get states devuelve una lista de Location objetos cuyo código tiene una longitud de 2 caracteres.
+//@PathVariable es una anotación de Spring
+//int es un tipo de dato primitivo en Java que representa un número entero
+//minLength: Es la variable que almacena el valor entero de la longitud mínima proporcionada en la URL.
+
         return initialLetterArray;
+    } public List<Location> getLocationsByMinNameLength (int minCaracteres) {
+        List<Location> result = new ArrayList<>();
+        for (Location location : locations) {
+            if (location.getName().length() > minCaracteres) {
+                result.add(location);
+            }
+        }
+        return result;
     }
 }
