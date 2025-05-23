@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "a7a20a96-e216-45eb-ae9c-2bb20e5a254b",
+		"name": "proyecto myfirstapii",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42361946"
+	},
+	"item": [
+		{
+			"name": "Get typedocuments",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/parameters/typedocuments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parameters",
+						"typedocuments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get typeproducts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/parameters/typedocuments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parameters",
+						"typedocuments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/parameters/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"parameters",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

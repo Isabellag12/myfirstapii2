@@ -23,34 +23,22 @@ import java.util.List;
 @Service
 @Getter
 public class SellerService {
-    @Autowired
-    private LocationService locationService;
 
-    @Getter
-    private List<Seller> sellers;
+    private List<Seller> sellers = new ArrayList<>();
 
-    @Value("${seller_filename}")
-    private String sellerFilename;
-
-    @PostConstruct
-    public void readLocationsFromCSV() throws IOException {
-        sellers = new ArrayList<>();
-
-        try (CSVReader csvReader = new CSVReader(new FileReader(
-                new ClassPathResource(sellerFilename).getFile()))) {
-
-            String[] line;
-            csvReader.skip(1); // Omitir cabecera si aplica
-
-            while ((line = csvReader.readNext()) != null) {
-                sellers.add(new Seller((line[0]),line[1],Byte.parseByte(line[2]),line[3],line[4], (Location) locationService.getLocationByCode));
-            }
-
-        } catch (IOException | CsvValidationException e) {
-            throw new RuntimeException("Error leyendo el archivo CSV", e);
-        }
+    public String addSeller(Seller seller) {
+        sellers.add(seller);
+        return "Tienda agregada";
     }
 
+    public Seller getSellerByCode(String code) {
+        for (Seller seller : sellers) {
+            if (seller.getCode().equals(code)) {
+                return seller;
+            }
+        }
+        return null;
+    }
 }
 
 

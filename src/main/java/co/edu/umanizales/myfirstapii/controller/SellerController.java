@@ -12,14 +12,14 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/Seller" )
 public class SellerController {
-    @Autowired
-    private SellerService sellerService;
+   // @Autowired
+    //private SellerService sellerService;
 
-    @GetMapping
-    public List<Seller> getStore() {
-        return sellerService.getSellers();
+   // @GetMapping
+   // public List<Seller> getStore() {
+   //     return sellerService.getSellers();
     }
 
 
-}
+
 

@@ -7,14 +7,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+public class Seller{
 
-public class Seller {
     private String name;
     private String lastName;
     private byte age;
     private String gender;
     private String identification;
-    private Location location;
-
+    private Location City;
+    private TypeDocument typeDoc;
+    private String code;
 
 }

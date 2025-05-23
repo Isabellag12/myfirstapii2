@@ -73,7 +73,7 @@ public class LocationService {
 
     public Location getLocationByName(String name) {
         for (Location location : locations) {
-            if (location.getName().equals(name)) {
+            if (location.getDescription().equals(name)) {
                 return location;
             }
         }
@@ -82,7 +82,7 @@ public class LocationService {
     public List<Location> getLocationByInitialLetter (String initialLetter) {
         List<Location> initialLetterArray = new ArrayList<>();
         for (Location location : locations) {
-            if(location.getName().charAt(0)== initialLetter.charAt(0)){
+            if(location.getDescription().charAt(0)== initialLetter.charAt(0)){
                 initialLetterArray.add(location);
             }
         }
@@ -100,7 +100,7 @@ public class LocationService {
     } public List<Location> getLocationsByMinNameLength (int minCaracteres) {
         List<Location> result = new ArrayList<>();
         for (Location location : locations) {
-            if (location.getName().length() > minCaracteres) {
+            if (location.getDescription().length() > minCaracteres) {
                 result.add(location);
             }
         }
